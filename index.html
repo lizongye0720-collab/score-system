@@ -502,7 +502,7 @@
         // 页面加载完成初始化
         document.addEventListener('DOMContentLoaded', function() {
             // 从后端加载初始数据
-            fetch('/api/data?action=load')
+            fetch('/api/data.js?action=load')
                 .then(res => {
                     if (!res.ok) throw new Error('数据加载失败');
                     return res.json();
@@ -587,7 +587,7 @@
         
         // 保存数据到后端并广播更新
         function saveDataToServer() {
-            fetch('/api/data?action=save', {
+            /api/data.js?action=save, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
