@@ -587,8 +587,8 @@
         
         // 保存数据到后端并广播更新
         function saveDataToServer() {
-            /api/data.js?action=save, {
-                method: 'POST',
+            fetch('/api/data.js?action=save', {
+                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contestants,
